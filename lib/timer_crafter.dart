@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:time_crafter/profile.dart';
+import 'package:time_crafter/settings.dart';
+import 'package:time_crafter/statistics.dart';
 import 'package:time_crafter/todo.dart';
 import 'package:timer_builder/timer_builder.dart';
 
@@ -29,16 +32,29 @@ class _TimerAppState extends State<timer_crafter> {
           IconButton(
             icon: Icon(Icons.bar_chart),
             onPressed: () {
+                            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => StatisticsPage()),
+              );
             },
           ),
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsPage()),
+              );
             },
           ),
           IconButton(
             icon: Icon(Icons.person),
             onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+              );
+              
             },
           ),
         ],
