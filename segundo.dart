@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:semana5/segundo.dart';
+import './segundo.dart';
 
 
 void main() {

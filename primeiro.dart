@@ -1,6 +1,6 @@
-import 'dart:ffi';
+
 import 'package:flutter/material.dart';
-import 'package:semana5/terceira.dart';
+// import 'package:semana5/terceira.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class GraphPage extends StatefulWidget {
