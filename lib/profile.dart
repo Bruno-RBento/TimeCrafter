@@ -17,7 +17,7 @@ class UserProfile extends StatelessWidget {
           CircleAvatar(
             radius: 50,
             backgroundImage: AssetImage(
-                'C:/Users/manec/Desktop/PDM/wetransfer_aula5_2023-10-31_1030/Semana5/lib/aquiles.jpg'), // Replace with the actual image path
+                'assets/profile.png'), // Replace with the actual image path
           ),
 
           SizedBox(height: 16),

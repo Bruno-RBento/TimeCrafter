@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:time_crafter/timer_crafter.dart';
 import 'criar_conta.dart';
+// Import the TimeCraftScreen
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -16,6 +18,15 @@ class _LoginState extends State<Login> {
   TextEditingController passwordController = TextEditingController();
 
   bool _showPassword = false;
+
+  // Import the database connection function
+  Future<bool> connectToDatabase() async {
+    // Your database connection logic here
+    // ...
+
+    // Placeholder return value
+    return true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +91,24 @@ class _LoginState extends State<Login> {
                     const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: Center(
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formkey.currentState!.validate()) {
-                        //levar para pagina principal
+                        bool isConnected = await connectToDatabase();
+
+                        if (isConnected) {
+                          // Navigate to the TimeCraftScreen when connected
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => timer_crafter()),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content:
+                                    Text('Failed to connect to the database')),
+                          );
+                        }
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
@@ -100,7 +126,8 @@ class _LoginState extends State<Login> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => cria_conta()),
+                      MaterialPageRoute(
+                          builder: (context) => cria_conta()),
                     );
                   },
                   child: Text(

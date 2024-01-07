@@ -10,6 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.blue, 
+        fontFamily: 'Roboto', 
+      ),
       home: Login(),      //home: timer_crafter(),
     );
   }

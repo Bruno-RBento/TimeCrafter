@@ -2,18 +2,12 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:flutter/material.dart';
 import 'graph.dart';
 
-
-
-class StatisticsPage extends StatelessWidget {
+class StatisticsPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage(),
-    );
-  }
+  State<StatisticsPage> createState() => _StatisticsPageState();
 }
 
-class _StatisticsPage extends State<StatisticsPage>{
+class _StatisticsPageState extends State<StatisticsPage> {
   bool isSwitched = true; // Set the initial value as needed
 
   @override
@@ -61,7 +55,7 @@ class _StatisticsPage extends State<StatisticsPage>{
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: isSwitched ?   Colors.pinkAccent : Colors.blue,
+                      color: isSwitched ? Colors.pinkAccent : Colors.blue,
                     ),
                   ),
                   Switch(
@@ -83,7 +77,6 @@ class _StatisticsPage extends State<StatisticsPage>{
                     ),
                   ),
                 ],
-
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,7 +85,11 @@ class _StatisticsPage extends State<StatisticsPage>{
                     onPressed: () {
                       // Add your logout logic here
                       // For simplicity, let's just print a message for now
-                      Navigator.push(context, MaterialPageRoute(builder:  (context) => GraphPage(title: "Study Time")));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  GraphPage(title: "Study Time")));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.blue, // Use the theme color or customize
@@ -117,7 +114,6 @@ class _StatisticsPage extends State<StatisticsPage>{
     );
   }
 }
-
 
 class PinkContainer extends StatelessWidget {
   @override
@@ -226,5 +222,3 @@ class PinkContainerFireplace extends StatelessWidget {
     );
   }
 }
-
-
